@@ -32,8 +32,8 @@ public class StartCommand {
         List<InlineKeyboardButton> rowButton1 = Stream.of("Якість повітря AQI")
                 .map(it -> InlineKeyboardButton.builder().text(it).callbackData("AQI").build())
                 .collect(Collectors.toList());
-        List<InlineKeyboardButton> rowButton2 = Stream.of("Радіаційний фон")
-                .map(it -> InlineKeyboardButton.builder().text(it).callbackData("XRAY").build())
+        List<InlineKeyboardButton> rowButton2 = Stream.of("Вміст SO2")
+                .map(it -> InlineKeyboardButton.builder().text(it).callbackData("SO2").build())
                 .collect(Collectors.toList());
         List<InlineKeyboardButton> rowButton3 = Stream.of("Поточна температура повітря")
                 .map(it -> InlineKeyboardButton.builder().text(it).callbackData("temperature").build())

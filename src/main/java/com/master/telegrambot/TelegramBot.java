@@ -2,7 +2,7 @@ package com.master.telegrambot;
 
 import com.master.telegrambot.botconfig.BotConfig;
 import com.master.telegrambot.button.ButtonHandler;
-import com.master.telegrambot.button.ClearButton;
+
 import com.master.telegrambot.comand.CommandHandler;
 import com.master.telegrambot.sevrice.function.FunctionHandler;
 import com.master.telegrambot.sevrice.Location.LocationHandler;
@@ -25,7 +25,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     private final ButtonHandler buttonHandler;
     private final FunctionHandler functionHandler;
     private final LocationHandler locationHandler;
-    private final ClearButton clearButton;
+
 
     @Override
     public String getBotUsername() {
@@ -48,9 +48,6 @@ public class TelegramBot extends TelegramLongPollingBot {
             chatId = update.getMessage().getChatId();
 
             if (message.hasLocation()) {
-//                sendMessage(clearButton.getSendMessage(chatId));
-//                sendMessage(SendMessage.builder().chatId(chatId).text("!!!").replyMarkup(new ReplyKeyboardRemove()).build());
-
                 Location location = message.getLocation();
                 locationHandler.setLocationCat(chatId, location);
                 sendMessage(functionHandler.useFunction(chatId));

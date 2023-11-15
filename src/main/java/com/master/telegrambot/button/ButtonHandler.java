@@ -16,14 +16,15 @@ public class ButtonHandler {
 
     private final AQIButton aqiButton;
     private final YetButton yetButton;
+    private final COButton coButton;
     private final TemperatureButton temperatureButton;
 
-    public SendMessage getSendMessage(long chatId/*, int messageId*/, String button) {
+    public SendMessage getSendMessage(long chatId, String button) {
         switch (button) {
             case "AQI":
                 return aqiButton.getSendMessage(chatId);
-            case "XRAY":
-                return aqiButton.getSendMessage(chatId);
+            case "SO2":
+                return coButton.getSendMessage(chatId);
             case "temperature":
                 return temperatureButton.getSendMessage(chatId);
             case "yet":
